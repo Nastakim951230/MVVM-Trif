@@ -1,0 +1,28 @@
+﻿<Window x:Class="MVVM_Trif.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_Trif"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Center" >Выберите арифметическую операцию</TextBlock>
+            <ComboBox ItemsSource="{Binding ComboChange}" SelectedIndex="{Binding IndexSelected }" ></ComboBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Text="{Binding Pervoe}" Style="{StaticResource StuleTextBox}"/>
+                <TextBlock Text="{Binding CBIndex}"></TextBlock>
+                <TextBox  Text="{Binding Vtoroe}" Style="{StaticResource StuleTextBox}"/>
+            </StackPanel>
+            <StackPanel>
+                <Button Command="{Binding Command}" >Вычислить</Button>
+            </StackPanel>
+            <StackPanel>
+                <GroupBox Header="Результат:">
+                    <TextBlock Text="{Binding CountChange}"></TextBlock>
+                </GroupBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
